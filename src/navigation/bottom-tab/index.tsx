@@ -31,52 +31,27 @@ export default function BottomTabNavigator() {
         name="Home"
         component={HomeNavigator}
         options={{
-          tabBarIcon: ({focused}) =>
-            focused ? (
-              <FontAwesome5 name="home" size={24} color={colors.selected} />
-            ) : (
-              <FontAwesome5 name="home" size={24} color={colors.unselected} />
-            ),
+          tabBarIcon: ({color, size}) => (
+            <FontAwesome5 name="home" color={color} size={size} />
+          ),
         }}
       />
       <BottomTab.Screen
         name="AboutApp"
         component={AboutAppNavigator}
         options={{
-          tabBarIcon: ({focused}) =>
-            focused ? (
-              <FontAwesome5
-                name="question-circle"
-                size={24}
-                color={colors.selected}
-              />
-            ) : (
-              <FontAwesome5
-                name="question-circle"
-                size={24}
-                color={colors.unselected}
-              />
-            ),
+          tabBarIcon: ({color, size}) => (
+            <FontAwesome5 name="question-circle" color={color} size={size} />
+          ),
         }}
       />
       <BottomTab.Screen
         name="Profile"
         component={ProfileNavigator}
         options={{
-          tabBarIcon: ({focused}) =>
-            focused ? (
-              <FontAwesome5
-                name="user-circle"
-                size={24}
-                color={colors.selected}
-              />
-            ) : (
-              <FontAwesome5
-                name="user-circle"
-                size={24}
-                color={colors.unselected}
-              />
-            ),
+          tabBarIcon: ({color, size}) => (
+            <FontAwesome5 name="user-circle" color={color} size={size} />
+          ),
         }}
       />
     </BottomTab.Navigator>
