@@ -2,56 +2,61 @@ import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {TouchableOpacity, StyleSheet, Text, View, Alert} from 'react-native';
 import {colors} from '@/style/theme';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 const style = StyleSheet.create({
-  image: {
+  contents: {
+    marginTop: 70,
+    paddingHorizontal: 20,
+    height: 240,
+  },
+  contentsHeader: {
+    flex: 1,
+    marginLeft: 15,
+    flexDirection: 'row',
+  },
+  contentsBox: {
+    flex: 4,
+    marginTop: 10,
+    paddingHorizontal: 35,
     width: '100%',
-    aspectRatio: 3.43,
-    marginTop: 20,
-    borderRadius: 12,
-  },
-  topPadding: {
-    flex: 2,
-  },
-  title: {
-    flex: 1,
-    flexDirection: 'row',
-  },
-  description: {
-    flex: 5,
-    flexDirection: 'row',
-  },
-  buttonView: {
-    flex: 1,
-    flexDirection: 'row',
-  },
-  titleText: {
-    fontSize: 32,
-    color: 'black',
-    flex: 8,
-  },
-  descriptionText: {
-    fontSize: 21,
-    color: 'black',
-    flex: 8,
-  },
-  padding: {
-    flex: 1,
-  },
-  submitButton: {
-    flex: 8,
-    borderColor: '#F24726',
+    backgroundColor: colors.background2,
     borderRadius: 20,
-    borderWidth: 5,
-    alignItems: 'center',
     justifyContent: 'center',
   },
-  submitButtonText: {
-    color: '#F24726',
-    fontSize: 24,
+  title: {
+    justifyContent: 'center',
   },
-  bottomPaddingView: {
-    flex: 2,
+  titleText: {
+    fontFamily: 'SFProText-Bold',
+    fontSize: 32,
+    color: 'black',
+  },
+  descriptionText: {
+    fontFamily: 'SFProText-Bold',
+    fontSize: 18,
+    color: 'black',
+    lineHeight: 40,
+    justifyContent: 'center',
+    textAlign: 'left',
+  },
+  buttonView: {
+    marginTop: 110,
+    marginHorizontal: 70,
+    height: 100,
+  },
+  submitButton: {
+    borderRadius: 20,
+    width: '100%',
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: colors.selected2,
+  },
+  submitButtonText: {
+    fontFamily: 'SFProText-Regular',
+    color: colors.background2,
+    fontSize: 22,
   },
 });
 
@@ -69,29 +74,28 @@ const viewStyle = {
 export default function Home() {
   return (
     <SafeAreaView style={viewStyle}>
-      <View style={style.topPadding} />
-      <View style={style.title}>
-        <Text style={style.padding} />
-        <Text style={style.titleText}>LostBirds</Text>
-        <Text style={style.padding} />
-      </View>
-      <View style={style.description}>
-        <Text style={style.padding} />
-        <Text style={style.descriptionText}>
-          Lost Birds looks at photos of birds around you and lets you know if a
-          bird is lost or wandering.
-        </Text>
-        <Text style={style.padding} />
+      <View style={style.contents}>
+        <View style={style.contentsHeader}>
+          <View style={{height: '100%', justifyContent: 'center'}}>
+            <FontAwesome5 name="kiwi-bird" color={colors.birdIcon} size={30} />
+          </View>
+          <View style={style.title}>
+            <Text style={style.titleText}> LostBirds</Text>
+          </View>
+        </View>
+        <View style={style.contentsBox}>
+          <Text style={style.descriptionText}>
+            Lost Birds looks at photos of birds around you and lets you know if
+            a bird is lost or wandering.
+          </Text>
+        </View>
       </View>
       <View style={style.buttonView}>
-        <Text style={style.padding} />
         <SubmitButton
           title="Submit your photo!"
           onPress={() => Alert.alert('Submit button pressed')}
         />
-        <Text style={style.padding} />
       </View>
-      <View style={style.bottomPaddingView} />
     </SafeAreaView>
   );
 }
