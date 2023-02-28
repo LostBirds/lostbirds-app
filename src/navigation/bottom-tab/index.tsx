@@ -23,6 +23,10 @@ export default function BottomTabNavigator() {
         tabBarInactiveTintColor: colors.unselected,
         tabBarShowLabel: false,
         headerShown: false,
+        tabBarStyle: {
+          flex: 0.15,
+          backgroundColor: colors.background2,
+        },
       }}
       safeAreaInsets={{
         bottom: Platform.select({android: 6}),

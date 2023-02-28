@@ -1,5 +1,6 @@
 export const colors = {
-  selected: '#414BB2',
-  unselected: '#6C6C6C',
+  selected: '#F24726',
+  unselected: '#191919',
   background1: '#FEF66A',
+  background2: '#FACC27',
 };
