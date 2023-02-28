@@ -6,7 +6,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 const style = StyleSheet.create({
   contents: {
-    marginTop: 70,
+    marginTop: 60,
     paddingHorizontal: 20,
     height: 240,
   },
@@ -29,7 +29,7 @@ const style = StyleSheet.create({
   },
   titleText: {
     fontFamily: 'SFProText-Bold',
-    fontSize: 32,
+    fontSize: 38,
     color: 'black',
   },
   descriptionText: {
@@ -41,7 +41,7 @@ const style = StyleSheet.create({
     textAlign: 'left',
   },
   buttonView: {
-    marginTop: 110,
+    marginTop: 140,
     marginHorizontal: 70,
     height: 100,
   },
